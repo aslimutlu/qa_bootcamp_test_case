@@ -1,9 +1,33 @@
-from pages.homePage import home_page_test
-from pages.careerPage import careerPageTest 
-from pages.qualityAssurancePage import qualityAssurancePageTest
-from pages.openPositionsPage import openPositionsPageTest
-from pages.positionDetail import positionDetailPageTest
-from pages.formPage import formPageTest 
+from selenium import webdriver
+from pages.homePage import HomePageTest
+from pages.careerPage import CareerPageTest 
+from pages.qualityAssurancePage import QualityAssurancePageTest
+from pages.openPositionsPage import OpenPositionsPageTest
+from pages.positionDetail import PositionDetailPageTest
+from pages.formPage import FormPageTest 
 
 
-home_page_test.run()
+
+def run_tests(browser="chrome"):
+
+    if browser == "chrome":
+        driver = webdriver.Chrome()
+    elif browser == "firefox":
+        driver = webdriver.Firefox()
+    elif browser == "edge":
+        driver = webdriver.Edge()
+    else:
+        print("unexpected browser type")
+        return        
+
+    HomePageTest().run(driver=driver)
+    CareerPageTest().run(driver=driver)
+    QualityAssurancePageTest().run(driver=driver)
+    OpenPositionsPageTest().run(driver=driver)
+    PositionDetailPageTest().run(driver= driver)
+    FormPageTest().run(driver = driver)
+    
+    driver.close()
+    
+
+run_tests(browser="edge")
