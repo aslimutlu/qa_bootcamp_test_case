@@ -27,11 +27,6 @@ pipeline {
             }
         }
 
-        post {
-            always {
-                echo 'Automation process finished...'
-            }
-        }
     }
 
 }
