@@ -17,12 +17,10 @@ pipeline {
     
         stage('Automation Process') {
             steps {
-                script {
-                    dir('/User/aslim/.jenkins/workspace/qa_pipeline') {
-                        echo 'Automation process running...'
-                        sh 'pip3 install -r requirements.txt'
-                        sh 'pwd'
-                    }
+                dir('/User/aslim/.jenkins/workspace/qa_pipeline') {
+                    echo 'Automation process running...'
+                    sh 'pip3 install -r requirements.txt'
+                    sh 'pwd'
                 }
             }
         }
