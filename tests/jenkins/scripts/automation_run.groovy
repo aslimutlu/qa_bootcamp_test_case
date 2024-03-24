@@ -20,7 +20,7 @@ pipeline {
                 powershell '''
                     Set-Location -Path "C:\\User\\aslim\\.jenkins\\workspace\\qa_pipeline"
                     Write-Output "Automation process running..."
-                    pip3 install -r requirements.txt
+                    pip install -r requirements.txt
                     Get-Location
                 '''
             }
