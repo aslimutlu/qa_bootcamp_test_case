@@ -20,9 +20,9 @@ def run_tests(browser="chrome"):
         print("unexpected browser type")
         return        
 
-    # HomePageTest().run(driver=driver)
-    # CareerPageTest().run(driver=driver)
-    # QualityAssurancePageTest().run(driver=driver)
+    HomePageTest().run(driver=driver)
+    CareerPageTest().run(driver=driver)
+    QualityAssurancePageTest().run(driver=driver)
     OpenPositionsPageTest().run(driver=driver)
     PositionDetailPageTest().run(driver= driver)
     FormPageTest().run(driver = driver)
