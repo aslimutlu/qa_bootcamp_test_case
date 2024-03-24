@@ -29,9 +29,9 @@ class Base():
             print("Url Eşleşti")
         else:
             print("Url Eşleşmedi")
-        
+            raise "url eşleşmedi"
 
-    def titleControl(self, contains, interval=10):
+    def titleControl(self,testname, contains, interval=10):
         global page_title
         page_title = self.driver.title
         title_control = WebDriverWait(self.driver, interval).until(EC.title_contains(contains))
@@ -39,6 +39,7 @@ class Base():
             print("Title girilen parametreyi İÇERİYOR!")
         else: 
             print("Title girilen parametreyi İÇERMİYOR!")
+            raise "title eşleşmedi"
 
 
     def clickElement(self, path,interval=10,method=By.XPATH):
@@ -51,7 +52,8 @@ class Base():
             print(err)
             print( path + ":" + method + "-> tıklanamadi")
             self.take_screenshot(file_path="./tests/pages/data/" + path +".png")
-            return
+            
+            raise err
         print( path + ":" + method + "-> tıklandi")
 
     def textReading(self, text, path, method=By.XPATH):
@@ -62,16 +64,16 @@ class Base():
         else:
             print("İstenen Metin: "+text, "Mevcut Metin: "+text_control, "\n", "İstenen text bulunamadı!")
             self.take_screenshot(file_path="./tests/pages/data/" + path +".png")
+            raise "text eşleşmedi"
 
     def clickElement_js(self, path, method=By.XPATH):
         try:
             click_element = self.driver.find_element(method, path)
             self.driver.execute_script("arguments[0].click();", click_element)       
         except Exception as err:
-            print(err)
             print(path + ":" + method + "-> tiklanamadi ")
             self.take_screenshot(file_path="./tests/pages/data/" + path +".png")
-            return
+            raise err
         print( path + ":" + method + "-> tıklandi")
     
     def wait_for_load(self, timeout=10):
