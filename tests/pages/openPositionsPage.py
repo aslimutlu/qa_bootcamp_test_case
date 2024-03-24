@@ -10,6 +10,7 @@ class OpenPositionsPageTest():
         
         base_test = Base(driver=driver)
         base_test.start("https://useinsider.com/careers/open-positions/?department=qualityassurance")
+        base_test.clickElement('//*[@id="wt-cli-reject-btn"]', 20)
         #department dropdown için title'ın quality assurance olduğundan emin olup location dropdownundan istanbul seçtirme işlemi
         while True:
             qa = base_test.driver.find_element(By.XPATH, '//*[@id="select2-filter-by-department-container"]')
