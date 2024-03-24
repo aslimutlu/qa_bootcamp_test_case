@@ -31,7 +31,7 @@ class Base():
             print("Url Eşleşmedi")
             raise "url eşleşmedi"
 
-    def titleControl(self,testname, contains, interval=10):
+    def titleControl(self, contains, interval=10):
         global page_title
         page_title = self.driver.title
         title_control = WebDriverWait(self.driver, interval).until(EC.title_contains(contains))
