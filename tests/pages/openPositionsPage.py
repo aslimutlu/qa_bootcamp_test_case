@@ -17,7 +17,7 @@ class OpenPositionsPageTest():
 
             if title_attribute == "Quality Assurance":
                 print("Başlık doğru: Quality Assurance")
-                base_test.clickElement('//*[@id="top-filter-form"]/div[1]/span/span[1]/span/span[2]', 200)
+                base_test.clickElement('//*[@id="top-filter-form"]/div[1]/span/span[1]/span', 200)
                 istanbul = base_test.driver.find_element(By.XPATH, '//li[.="Istanbul, Turkey"]')
                 istanbul.click()
                 base_test.wait_for_load(5)
