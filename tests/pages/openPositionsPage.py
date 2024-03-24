@@ -25,7 +25,7 @@ class OpenPositionsPageTest():
 
             else:
                 print("Başlık yanlış: ", title_attribute)
-                base_test.wait_for_load(10)
+                base_test.wait_for_load(20)
 
                 
         #seçilen bir rol üzerindeki view role butonuna tıkla

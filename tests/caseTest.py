@@ -30,4 +30,4 @@ def run_tests(browser="chrome"):
     driver.close()
     
 
-run_tests(browser="edge")
+run_tests()

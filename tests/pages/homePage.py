@@ -21,3 +21,6 @@ class HomePageTest():
         #sayfa kontrolleri
         base_test.urlControl("https://useinsider.com/careers/")
         base_test.titleControl("Career", 10)
+    
+ 
+   
