@@ -17,11 +17,12 @@ pipeline {
     
         stage('Automation Process') {
             steps {
-                dir('/User/aslim/.jenkins/workspace/qa_pipeline') {
-                    echo 'Automation process running...'
-                    sh 'pip3 install -r requirements.txt'
-                    sh 'pwd'
-                }
+                powershell '''
+                    Set-Location -Path "C:\\User\\aslim\\.jenkins\\workspace\\qa_pipeline"
+                    Write-Output "Automation process running..."
+                    pip3 install -r requirements.txt
+                    Get-Location
+                '''
             }
         }
     }
