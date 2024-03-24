@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    envirement {
+    environment {
         DEVELOPER = 'develop'
         BRANCH = '${BRANCH_NAME}' 
         ANSIBLE_FORCE_COLOR = 'true'
@@ -15,7 +15,7 @@ pipeline {
                 }
             }
         }
-    }
+    
 
         stage('Automation Process'){
             script{
@@ -32,5 +32,6 @@ pipeline {
                 echo 'Automation process finished...'
             }
         }
+    }
 
 }
