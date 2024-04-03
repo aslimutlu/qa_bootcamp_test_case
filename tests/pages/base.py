@@ -22,7 +22,7 @@ class Base():
 
     def urlControl(self, url):
         time.sleep(3)
-        global current_url
+        global current_url #silebilirsin
         current_url = self.driver.current_url
         print(current_url)
         if url in current_url:
@@ -33,9 +33,9 @@ class Base():
 
     def titleControl(self, contains, interval=10):
         global page_title
-        page_title = self.driver.title
+        page_title = self.driver.title #stitle_contains kullanıldığında gereksiz kalıyor. satır 39a bak.
         title_control = WebDriverWait(self.driver, interval).until(EC.title_contains(contains))
-        if contains in page_title:
+        if contains in page_title:  #burada bu kontrolü yapmama gerek yoktu. title_control bool değer döndürüyor. Onu kullanabilirdin.
             print("Title girilen parametreyi İÇERİYOR!")
         else: 
             print("Title girilen parametreyi İÇERMİYOR!")
