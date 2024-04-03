@@ -75,12 +75,12 @@ def run_tests(browser="chrome"):
         print("An error occurred during test execution:", e)
         log_test_result("PositionDetailPageTest", "Failed")
 
-    # try:
-    #     FormPageTest().run(driver=driver)
-    #     log_test_result("FormPageTest", "Passed")
-    # except Exception as e:
-    #     print("An error occurred during test execution:", e)
-    #     log_test_result("FormPageTest", "Failed")
+    try:
+        FormPageTest().run(driver=driver)
+        log_test_result("FormPageTest", "Passed")
+    except Exception as e:
+        print("An error occurred during test execution:", e)
+        log_test_result("FormPageTest", "Failed")
 
     finally:
         driver.close()
