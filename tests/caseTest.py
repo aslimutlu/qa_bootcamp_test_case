@@ -47,7 +47,7 @@ def run_tests(browser="chrome"):
         print("An error occurred during test execution:", e)
         log_test_result("HomePageTest", "Failed")
 
-    """ try:
+    try:
         CareerPageTest().run(driver=driver)
         log_test_result("CareerPageTest", "Passed")
     except Exception as e:
@@ -84,6 +84,6 @@ def run_tests(browser="chrome"):
 
     finally:
         driver.close()
- """
+
 
 run_tests()
